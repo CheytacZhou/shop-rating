@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shop Rating Predictor</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+    <h1>店铺体检</h1>
+     <p>店铺体检从地理位置、店铺属性、经管指标、社媒流量、竞争潜力和用户忠诚共六个维度为零售商户进行体检诊断</p>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Location" placeholder="地理位置" required="required" /><br>
+        <input type="text" name="Attributes" placeholder="店铺属性" required="required" /><br>
+        <input type="text" name="Sales" placeholder="经管指标" required="required" /><br>
+        <input type="text" name="Traffic" placeholder="社媒流量" required="required" /><br>
+        <input type="text" name="Potential" placeholder="竞争潜力" required="required" /><br>
+        <input type="text" name="Loyalty" placeholder="用户忠诚" required="required" /><br>
+        <button type="submit" class="btn">提交</button>
+    </form>
+    
+    <br>
+    <br>
+
+</div>
+{{ pred_overall }}<br>
+{{ pred_dim}}
+
+</body>
+</html>
