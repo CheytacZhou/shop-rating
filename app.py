@@ -2,7 +2,7 @@
 import numpy as np
 from flask import Flask, render_template, request
 import pickle
-from rating import rating
+from .rating import rating
 
 # Initialize the flask APP
 app = Flask(__name__)
