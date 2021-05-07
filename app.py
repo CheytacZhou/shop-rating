@@ -6,8 +6,8 @@ from rating import rating
 # Initialize the flask APP
 app = Flask(__name__)
 # Load the model
-# mod = pickle.load(open("rating.pkl", "rb"))
-mod = rating()
+mod = pickle.load(open("rating.pkl", "rb"))
+# mod = rating()
 
 # Default page for our web-app
 @app.route("/")
