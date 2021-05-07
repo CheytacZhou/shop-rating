@@ -1,12 +1,16 @@
 import numpy as np
 from flask import Flask, render_template, request
 import pickle
+import rating
 from rating import rating
 
 # Initialize the flask APP
 app = Flask(__name__)
+
 # Load the model
-mod = pickle.load(open("rating.pkl", "rb"))
+rating.main() # objects are being pickled with main_module as the top-level
+with open("rating.pkl", "rb") as f:
+    mod = pickle.load(f)
 # mod = rating()
 
 # Default page for our web-app
