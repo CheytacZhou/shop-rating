@@ -77,14 +77,12 @@ class rating:
         scores_overall = self.score_dimension(self.dimension, scores_dim)
         return scores_dim, scores_overall
     
-    
-if __name__ == "__main__":
+def main():
     mod = rating()
     # save model to .pkl file
-    fn = "rating.pkl"
-    with open(fn, "wb") as f:
+    with open("rating.pkl", "wb") as f:
         pickle.dump(mod, f)
     print("Model dumped!")
     
-    # load model from .pkl file
-    mod = pickle.load(open("rating.pkl", "rb"))
+if __name__ == "__main__":
+    main()
