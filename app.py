@@ -8,10 +8,10 @@ from rating import rating
 app = Flask(__name__)
 
 # Load the model
-rating.main() # objects are being pickled with main_module as the top-level
-with open("rating.pkl", "rb") as f:
-    mod = pickle.load(f)
-# mod = rating()
+# rating.main() # objects are being pickled with main_module as the top-level
+# with open("rating.pkl", "rb") as f:
+    # mod = pickle.load(f)
+mod = rating()
 
 # Default page for our web-app
 @app.route("/")
